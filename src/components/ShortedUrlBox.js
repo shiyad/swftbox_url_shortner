@@ -10,7 +10,7 @@ function ShortedUrlBox({ shortUrl }) {
     <>
       <div className="flex w-1/2 ml-2 items-center rounded-full bg-gray-100 p-2">
         <input
-          className="w-full hidden md:inline-flex ml-2 items-center bg-transparent outline-none placeholder-gray-500 flex-shrink"
+          className="hidden md:inline-flex ml-2 items-center bg-transparent outline-none placeholder-gray-500 flex-shrink w-full px-2"
           type="text"
           placeholder="Url to short"
           value={shortUrl}
