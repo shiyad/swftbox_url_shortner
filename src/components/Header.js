@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { BrowserRouter as Router, Routes, Route, Link } from "react-router-dom";
+import { Link } from "react-router-dom";
 
 import { MenuAlt1Icon } from "@heroicons/react/solid";
 
@@ -14,16 +14,6 @@ function Header() {
 
   return (
     <nav>
-      {/* <div className="sticky top-0 z-5 bg-amber-400 text-white flex items-center p-2 lg:px-5 shadow-md">
-        <Link to="/">
-          Swftbox{" "}
-          <span className="ml-2 mt-1 text-xs text-black">URL Shortner</span>
-        </Link>
-        <Link to="/Statistics" className="sticky top-0 text-white">
-          Statistics
-        </Link>
-        <Link to="/About">About</Link>
-      </div> */}
       <div className="flex flex-grow bg-amber-400 text-white justify-center sticky shadow-md w-full top-0 left-0">
         <div className="md:flex py-4 w-9/12 items-center justify-between">
           <Link to="/">
