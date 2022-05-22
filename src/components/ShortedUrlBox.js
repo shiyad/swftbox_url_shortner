@@ -16,7 +16,10 @@ function ShortedUrlBox({ shortUrl }) {
           value={shortUrl}
           disabled
         />
-        <ClipboardCopyIcon className="h-6 text-gray-600" />
+        <ClipboardCopyIcon
+          onClick={navigator.clipboard.writeText(shortUrl)}
+          className="h-6 text-gray-600 animate-bounce"
+        />
       </div>
       <button
         onClick={refreshPage}

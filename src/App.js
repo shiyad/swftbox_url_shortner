@@ -1,41 +1,25 @@
 import React, { useEffect, useState } from "react";
-import Header from "./components/Header";
-import RecentShortened from "./components/RecentShortened";
+
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
-
-import UrlBox from "./components/UrlBox";
-
-import { getEncodedUrlList } from "./services/ListEncodedUrls";
+import Header from "./components/Header";
+import About from "./pages/About";
+import Home from "./pages/Home";
+import Redirect from "./pages/Redirect";
+import StatisticDetails from "./pages/StatisticDetails";
+import Statistics from "./pages/Statistics";
 
 function App() {
-  const [list, setList] = useState([]);
-
-  useEffect(() => {
-    let mounted = true;
-    getEncodedUrlList().then((items) => {
-      if (mounted) {
-        console.log(items);
-        setList(items);
-      }
-    });
-    return () => (mounted = false);
-  }, []);
-
   return (
-    <div className="h-screen bg-gray-100 overflow-scroll">
+    <Router>
       <Header />
-      <UrlBox />
-
-      <div className="flex flex-grow justify-center">
-        <div className="flex flex-col lg:flex-row justify-start items-start mt-2 w-9/12 h-80">
-          <div className="grid lg:grid-cols-4 gap-4 pt-5 w-full">
-            {list.map((item) => (
-              <RecentShortened key={item._id} ShortUrl={item.shortUrl} />
-            ))}
-          </div>
-        </div>
-      </div>
-    </div>
+      <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="/:short" element={<Redirect />} />
+        <Route path="/statistics" element={<Statistics />} />
+        <Route path="/about" element={<About />} />
+        <Route path="/details/:short" element={<StatisticDetails />} />
+      </Routes>
+    </Router>
   );
 }
 
