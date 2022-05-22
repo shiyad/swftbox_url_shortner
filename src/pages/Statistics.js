@@ -61,18 +61,11 @@ function Statistics() {
                           </td>
                           <td className="text-sm text-gray-900 font-light px-6 py-2 whitespace-nowrap">
                             <div className="flex space-x-2 justify-center">
-                              <Link to={`/details/${item.shortUrl}`}>
-                                {/* <button
-                                  type="button"
-                                  data-mdb-ripple="true"
-                                  data-mdb-ripple-color="light"
-                                  className="inline-block px-6 py-2.5 bg-black text-white font-medium text-xs 
-                                leading-tight uppercase rounded shadow-md hover:bg-amber-500 hover:shadow-lg 
-                                focus:shadow-lg focus:outline-none focus:ring-0 
-                                active:shadow-lg transition duration-150 ease-in-out"
-                                > */}
+                              <Link
+                                className="cursor-pointer rounded-xl bg-black text-white hover:bg-amber-500 px-2 py-2"
+                                to={`/details/${item.shortUrl}`}
+                              >
                                 Show Statistic
-                                {/* </button> */}
                               </Link>
                             </div>
                           </td>
