@@ -7,7 +7,7 @@ export async function encodeUrl(fullUrl) {
 
   debugger;
 
-  const data = await fetch("http://localhost:3001/encode", {
+  const data = await fetch(`${process.env.REACT_APP_BASE_API_URL}/encode`, {
     method: "POST",
     headers: {
       "Content-Type": "application/json",
